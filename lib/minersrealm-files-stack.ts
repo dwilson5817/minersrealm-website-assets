@@ -1,19 +1,19 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import {Certificate} from "aws-cdk-lib/aws-certificatemanager";
-import {Constants} from "./constants";
-import {CloudFrontToS3} from "@aws-solutions-constructs/aws-cloudfront-s3";
-import {BucketDeployment, Source} from "aws-cdk-lib/aws-s3-deployment";
+import { Certificate } from "aws-cdk-lib/aws-certificatemanager";
+import { Constants } from "./constants";
+import { CloudFrontToS3 } from "@aws-solutions-constructs/aws-cloudfront-s3";
+import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
 
 const path = "./assets";
 
-export class MinersRealmFilesStack extends Stack {
+export class MinersRealmFiles extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const certificate = Certificate.fromCertificateArn(this, `${Constants.appName}Certificate`, Constants.certificateArn);
+    const certificate = Certificate.fromCertificateArn(this, 'Certificate', Constants.certificateArn);
 
-    const cloudFrontToS3 = new CloudFrontToS3(this, Constants.appName, {
+    const cloudFrontToS3 = new CloudFrontToS3(this, 'CloudFrontToS3', {
       cloudFrontDistributionProps: {
         certificate: certificate,
         domainNames: [ Constants.domainName ],
@@ -21,7 +21,7 @@ export class MinersRealmFilesStack extends Stack {
     });
 
     if (cloudFrontToS3.s3Bucket !== undefined) {
-      new BucketDeployment(this, `${Constants.appName}Deployment`, {
+      new BucketDeployment(this, 'BucketDeployment', {
         sources: [ Source.asset(path) ],
         destinationBucket: cloudFrontToS3.s3Bucket,
       });
