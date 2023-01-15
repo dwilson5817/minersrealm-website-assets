@@ -1,0 +1,8 @@
+cdk-deploy:
+  image: node:16-alpine
+  stage: deploy
+  script:
+    - npm install --progress=false
+    - npm run build
+    - npm run cdk bootstrap
+    - npm run cdk deploy
