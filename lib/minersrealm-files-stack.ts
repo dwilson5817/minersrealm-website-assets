@@ -7,7 +7,7 @@ import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
 
 const path = "./assets";
 
-export class MinersRealmFiles extends Stack {
+export class MinersRealmFilesStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
