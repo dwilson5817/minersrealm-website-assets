@@ -1,4 +1,4 @@
 export class Constants {
     static readonly domainName: string = 'files.minersrealm.net'
-    static readonly certificateArn: string = 'arn:aws:acm:us-east-1:351642118781:certificate/bd64141d-f868-4f8c-a2f1-8837dbd30e3e'
+    static readonly certificateArn: string = 'arn:aws:acm:us-east-1:965045848162:certificate/ce7d5b5b-aac7-49f2-8ca6-44b38a08276e'
 }
