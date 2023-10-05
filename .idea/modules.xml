@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/minersrealm-files.iml" filepath="$PROJECT_DIR$/.idea/minersrealm-files.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/minersrealm-website-assets.iml" filepath="$PROJECT_DIR$/.idea/minersrealm-website-assets.iml" />
     </modules>
   </component>
 </project>
